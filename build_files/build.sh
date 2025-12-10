@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y rclone nmap android-tools tlp tlp-rdw 
+dnf5 install -y rclone nmap android-tools tlp tlp-rdw
 
 # Use a COPR Example:
 #
@@ -23,10 +23,14 @@ dnf5 install -y rclone nmap android-tools tlp tlp-rdw
 
 systemctl enable podman.socket
 systemctl enable tlp.service
-systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 
 #### Disabling System Services
 
+# tuned tuned-ppd
 systemctl disable tuned.service
 systemctl disable tuned-ppd.service
+systemctl mask tuned.service tuned-ppd.service
+
+# Disable for TLP
+systemctl mask systemd-rfkill.service systemd-rfkill.socket
