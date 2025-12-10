@@ -29,3 +29,4 @@ systemctl mask systemd-rfkill.service systemd-rfkill.socket
 #### Disabling System Services
 
 systemctl disable tuned.service
+systemctl disable tuned-ppd.service
