@@ -19,9 +19,14 @@ dnf5 install -y rclone nmap android-tools tlp tlp-rdw
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-#### Example for enabling a System Unit File
+#### Enabling  System Services
 
 systemctl enable podman.socket
 systemctl enable tlp.service
-systemctl disable tuned.service
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
+
+
+#### Disabling System Services
+
+systemctl disable tuned.service
+systemctl stop tuned.service
