@@ -2,6 +2,16 @@
 
 set -ouex pipefail
 
+### Add repo
+tee  /etc/yum.repos.d/JottaCLI.repo <<'EOF'
+[jotta-cli]
+name=Jottacloud CLI
+baseurl=https://repo.jotta.cloud/redhat
+gpgcheck=1
+gpgkey=https://repo.jotta.cloud/public.gpg
+EOF
+
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -28,9 +38,10 @@ systemctl enable tlp.service
 #### Disabling System Services
 
 # tuned tuned-ppd
-systemctl disable tuned.service
-systemctl disable tuned-ppd.service
+systemctl disable tuned.service tuned-ppd.service
 systemctl mask tuned.service tuned-ppd.service
 
 # Disable for TLP
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
+
+
