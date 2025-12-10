@@ -29,6 +29,3 @@ systemctl mask systemd-rfkill.service systemd-rfkill.socket
 #### Disabling System Services
 
 systemctl disable tuned.service
-
-#### Disable tuned
-tuned-adm off
