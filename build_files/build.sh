@@ -20,7 +20,7 @@ EOF
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y rclone nmap android-tools tlp tlp-rdw jotta-cli
+dnf5 install -y rclone nmap android-tools jotta-cli
 
 # Use a COPR Example:
 #
@@ -32,16 +32,16 @@ dnf5 install -y rclone nmap android-tools tlp tlp-rdw jotta-cli
 #### Enabling  System Services
 
 systemctl enable podman.socket
-systemctl enable tlp.service
+#systemctl enable tlp.service
 
 
 #### Disabling System Services
 
 # tuned tuned-ppd
-systemctl disable tuned.service tuned-ppd.service
-systemctl mask tuned.service tuned-ppd.service
+#systemctl disable tuned.service tuned-ppd.service
+#systemctl mask tuned.service tuned-ppd.service
 
 # Disable for TLP
-systemctl mask systemd-rfkill.service systemd-rfkill.socket
+#systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 
