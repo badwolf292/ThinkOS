@@ -2,7 +2,9 @@
 
 set -ouex pipefail
 
-### Add repo
+#### Add repo ####
+
+### Jottacloud ###
 tee  /etc/yum.repos.d/JottaCLI.repo <<'EOF'
 [jotta-cli]
 name=Jottacloud CLI
@@ -32,16 +34,4 @@ dnf5 install -y rclone nmap android-tools jotta-cli
 #### Enabling  System Services
 
 systemctl enable podman.socket
-#systemctl enable tlp.service
-
-
-#### Disabling System Services
-
-# tuned tuned-ppd
-#systemctl disable tuned.service tuned-ppd.service
-#systemctl mask tuned.service tuned-ppd.service
-
-# Disable for TLP
-#systemctl mask systemd-rfkill.service systemd-rfkill.socket
-
 
