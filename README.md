@@ -9,7 +9,6 @@ then run this command: ```sudo bootc switch ghcr.io/badwolf292/thinkos```
 
 
 The current extra packages I have added are:
-- rclone
 - android-tools (adb)
 - nmap
 - tmux
