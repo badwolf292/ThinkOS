@@ -1,9 +1,9 @@
-Personalized Aurora I plan to use on my ThinkPad.
+Personalized Bluefin I plan to use on my ThinkPad.
 
-Based on Aurora stable
+Based on Bluefin stable
 
 In order to use this you have to:
-- Install Aurora or Bazzite KDE
+- Install Bluefin or Bazzite GNOME
 
 then run this command: ```sudo bootc switch ghcr.io/badwolf292/thinkos```
 
