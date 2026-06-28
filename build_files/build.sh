@@ -5,13 +5,13 @@ set -ouex pipefail
 #### Add repo ####
 
 ### Jottacloud ###
-tee  /etc/yum.repos.d/JottaCLI.repo <<'EOF'
-[jotta-cli]
-name=Jottacloud CLI
-baseurl=https://repo.jotta.cloud/redhat
-gpgcheck=1
-gpgkey=https://repo.jotta.cloud/public.gpg
-EOF
+#tee  /etc/yum.repos.d/JottaCLI.repo <<'EOF'
+#[jotta-cli]
+#name=Jottacloud CLI
+#baseurl=https://repo.jotta.cloud/redhat
+#gpgcheck=1
+#gpgkey=https://repo.jotta.cloud/public.gpg
+#EOF
 
 
 ### Install packages
@@ -22,7 +22,7 @@ EOF
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y android-tools jotta-cli
+dnf5 install -y android-tools
 
 # Use a COPR Example:
 #
